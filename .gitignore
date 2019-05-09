@@ -17,3 +17,5 @@ pom.xml.asc
 /ethlance-emailer.iml
 /.node-xmlhttprequest-sync-72469
 /ethlance-emailer.js.map
+emailer/
+package-lock.json

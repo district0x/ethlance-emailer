@@ -1,0 +1,22 @@
+language: clojure
+script: lein test
+notifications:
+  email:
+  recipients:
+  - juan@district0x.io
+  slack:
+    on_success: always
+    on_failure: always
+    rooms:
+    - district0x:53vhalUfg0MitsQwzjP5PWdd#travis-ci
+env:
+  global:
+  - secure: MXQkyb3titqUJIXosEOE3ag9GQYvfXNaU3fUwZBvyJv/4mfFcyYMZFFhbsRRNdcDmiGoIaJPbs6LW+ylyLIabl6uq5z1KLNNuMa1S/UU3kP6Cz75rTt9YXJaF87hyq/7gYR/VCfQ3f/domnjWsWH66VB+cfxQqdIrVZFw/iX7dXMAlU8qZT2BXVLoGpFTM/SJRlhvFgQwOu6Veto0LWLr2WFGG9d9WqTz1ml0jWj7XnhxNASfB2Tp3KIXXYB93kyMt6+PKumKpgjnw1OXXBMYwyR3XpyXgHJ1Aid3aEPor3aoJnEC58yByPBKpi1sj92Bic4GtrCd8ij37dRRecpXD2oFFeD6nGJOo/swDP9W7rYOo6xaQMe0hZ2Xp0lFzGUsUv6mie95oH/UTdaC6CAo3/fMLfalYtzlyjgOCM2BqU75f7ntdvd06rcR4ho5yhTCTVW3bcoAaJNHc4jX/J9T90JHzQQ4+069ahELuPp2BMEY+RAfuvV6s+0HEeDCGS/maTEMIBX5OelPeAwmT9N/uAeKCh34UJC1UFY+nw1s8nSyN51OGiWcte/XPLp+mWC27vM1tgrFYRkiAFCwzIIV20Jfk1DEwR0OEUv6P1WXJmy62aNcg1Q/eHEdmrkLl2EciUnamzjpdxcS0768iwJLcGd3tZ/LZUA00LJDV1f/zM=
+  - secure: WfspVtPKUYNSPAsXNBma67t6Fx7KZ5k6OfuzppNvc504MpPX2arcgs+CHJZ3ZYzcopi0OuETyqPnh8qfpJyIPEp9L7vNSa6ejQ+Hwjhzw6wlGW1vKGR2xgJ16D/1WjfrSuPWJzaELk58oIXOzbYQUpHYIXRL7i55BNn+20Jj8Un60aC7lhoxCmnWdxoeZeosuSZGSoyKdgKIDqBizLGJgNA6N0Ydh/aRkeqd2BkAxon31VAr/2Tz5ar9fYl9WA16ieQnqZi69qd1oazIVdgP7bUovwJEuWP1tiiWLn6Sb8yqhN6pyrHuCjriryOdnEEItG/rthLgnV+55jttVLL4ebk2cR2cGugWnURrOf3EXlp7lQeTT83Xyh0GBx9403eCn3+FUA59yhlgF7unmAE1Nidj90oSa7V33f6MAu9pSPQBIOWyDZUi3ZYhM5s+qIeqEXCQl3rDLF7oN5dduYbjCA4szIG6rr3TDgipDwShVBLKZPHOqw3bBvlWRKJvsTXA4c48t846DHfeEQQruE6XKpd/Q/HWgDdsi88w9GiC3RFs+WiwBeP7gJHfBHsc1r7wGwmLjnvlUPV2jDVOuYDAe0h/L5xwIRIdXPtPODxFmO4+9K5YJPbDUBxXmNZ4ebzsJ53Jko2BMxZV6fH4B8kgYtCrCOOFvypq/B7itaee5As=
+services:
+- docker
+deploy:
+- provider: script
+  script: bash docker-push.sh prod
+  on:
+    branch: production

@@ -24,18 +24,14 @@
                        [sendgrid "4.7.1"]
                        [node-schedule "1.2.0"]]}
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-  :source-paths ["src" "target/classes" "dev"]
-  :cljsbuild {:builds
-              {:main {                                      ;:notify-command ["node" "ethlance-emailer.js"]
-                      :compiler {:main ethlance-emailer.cmd
-                                 :output-to "ethlance-emailer.js",
-                                 :output-dir "release",
-                                 :target :nodejs,
-                                 :optimizations :advanced,
-                                 :verbose false
-                                 :source-map "ethlance-emailer.js.map"
-                                 :externs ["src/ethlance_emailer/externs.js"]
-                                 }
-                      :source-paths ["src"]}}}
-  :clean-targets ["out" "release" "ethlance-emailer.js"]
-  :target-path "target")
+  :source-paths ["src" "dev"]
+  :cljsbuild {:builds [{:id "emailer"
+                        :source-paths ["src"]
+                        :compiler {:main "ethlance-emailer.cmd"
+                                   :output-to "emailer/ethlance-emailer.js"
+                                   :output-dir "emailer"
+                                   :target :nodejs
+                                   :optimizations :simple
+                                   :source-map "emailer/ethlance-emailer.js.map"
+                                   :externs ["src/ethlance_emailer/externs.js"]}}]}
+  :clean-targets ["emailer" "target"])

@@ -1,1 +1,0 @@
-worker: node ethlance-emailer.js
