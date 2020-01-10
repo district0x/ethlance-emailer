@@ -7,10 +7,8 @@
                  [camel-snake-kebab "0.4.0"]
                  [cljs-web3 "0.18.2-0"]
                  [com.andrewmcveigh/cljs-time "0.4.0"]
-                 [com.cemerick/piggieback "0.2.1"]
-                 [figwheel-sidecar "0.5.9"]
                  [medley "0.8.3"]
-                 [org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.520"]
                  [org.clojure/tools.nrepl "0.2.10"]
                  [print-foo-cljs "2.0.3"]]
@@ -23,7 +21,9 @@
                        [solidity-sha3 "0.4.1"]
                        [sendgrid "4.7.1"]
                        [node-schedule "1.2.0"]]}
-  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+  :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.19"]
+                                  [cider/piggieback "0.4.0"]]}}
+  :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
   :source-paths ["src" "dev"]
   :cljsbuild {:builds [{:id "emailer"
                         :source-paths ["src"]
