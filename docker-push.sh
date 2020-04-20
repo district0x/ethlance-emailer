@@ -1,7 +1,8 @@
 #!/bin/bash
 
 NAME=district0x/ethlance-emailer
-VERSION=$(git log -1 --pretty=%h)
+VERSION=$CIRCLE_SHA1
+#VERSION=(git log -1 --pretty=%h)
 IMG=$NAME:$VERSION
 TAG=latest
 

@@ -48,7 +48,7 @@ jobs:
           paths:
             - server/*
             - resources/public/contracts/build/*
-            - node-modules/*
+            - node_modules/*
             - docker-builds/*
             - docker-push.sh
 
@@ -59,7 +59,9 @@ jobs:
          at: ~/ci
      - run:
          name: Deploy docker image
-         command: /bin/bash docker-push.sh
+         command: |
+           cd ~/ci
+           /bin/bash docker-push.sh
      - slack/status:
          channel: travis-ci
          mentions: $CIRCLE_USERNAME
