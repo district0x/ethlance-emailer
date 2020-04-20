@@ -1,7 +1,6 @@
-(ns ethlance-emailer.templates
+(ns server.templates
   (:require [goog.string :as gstring]
-            [goog.string.format]
-            [ethlance-emailer.utils :as u]))
+            [server.utils :as u]))
 
 (defn on-invoice-added [invoice freelancer]
   (gstring/format
@@ -56,7 +55,6 @@
     (gstring/htmlEscape (:user/name freelancer))
     (gstring/htmlEscape (:job/title job))
     (gstring/htmlEscape (:contract/cancel-description contract))))
-
 
 (defn on-job-contract-feedback-added [rating feedback sender]
   (gstring/format
@@ -123,4 +121,3 @@
 
 (def on-job-added (partial job-recommendations "We just got a new job matching your skills!"))
 (def on-job-recommendations-interval (partial job-recommendations "We have some new jobs matching your skills!"))
-

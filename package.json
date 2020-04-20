@@ -1,0 +1,29 @@
+{
+  "name": "ethlance-emailer",
+  "version": "0.0.9",
+  "private": false,
+  "scripts": {
+    "contracts:compile": "truffle compile",
+    "watch": "shadow-cljs watch server",
+    "compile": "shadow-cljs compile server",
+    "release": "shadow-cljs release server",
+    "clean": "git clean -fdx",
+    "deps": "yarn install --frozen-lockfile"
+  },
+  "dependencies": {
+    "@sentry/node": "4.2.1",
+    "chalk": "2.3.0",
+    "web3": "1.2.0"
+  },
+  "devDependencies": {
+    "source-map-support": "0.5.16",
+    "shadow-cljs": "2.8.90",
+    "truffle": "4.1.14"
+  },
+  "engines": {
+    "node": ">=11.14.0"
+  },
+  "comments": {
+    "engine": "current version of node on circleci instances"
+  }
+}

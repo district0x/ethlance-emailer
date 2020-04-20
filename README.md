@@ -4,3 +4,9 @@
 
 App listens to [Ethlance](http://ethlance.com) events on public Ethereum blockchain and sends notification emails
 to users
+
+### Development
+
+```clojure
+(shadow.cljs.devtools.api/nrepl-select :server)
+```
