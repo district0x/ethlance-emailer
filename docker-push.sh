@@ -2,7 +2,7 @@
 
 NAME=district0x/ethlance-emailer
 VERSION=$CIRCLE_SHA1
-#VERSION=(git log -1 --pretty=%h)
+#VERSION=$(git log -1 --pretty=%h)
 IMG=$NAME:$VERSION
 TAG=latest
 
